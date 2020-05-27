@@ -1,0 +1,13 @@
+{
+  "kernel": {
+    "name": "AlpacaKernel",
+    "version": "r10",
+    "link": "",
+    "changelog_url": "https://raw.githubusercontent.com/KostyaJRZ/kernel_xiaomi_onclite/ten/fkm/changelog",
+    "date": "",
+    "sha1": ""
+  },
+  "support": {
+    "link": ""
+  }
+}
