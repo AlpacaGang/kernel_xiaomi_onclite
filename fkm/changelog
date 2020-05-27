@@ -2,3 +2,5 @@
 - Convert remaining users of total{ram,high}_pages to atomic
 - Add Wireguard Snapshot v1.0.20200429
 - Update Wireguard to 1.0.20200520
+- Convert totalram_pages and totalhigh_pages variables to atomc
+- Swap pages one at a time
