@@ -18,10 +18,7 @@ git clone https://github.com/AlpacaGang/AnyKernel3 -b onclite
 
 # Download Clang
 if [ ! -d clang ]; then
-    wget https://android.googlesource.com/platform/prebuilts/clang/host/linux-x86/+archive/refs/heads/master/clang-r383902.tar.gz
-    mkdir -p clang/clang-r383902
-    tar xvzf clang-r383902.tar.gz -C clang/clang-r383902
-    rm clang-r383902.tar.gz
+git clone https://github.com/kdrag0n/proton-clang clang/proton/ --depth=1
 fi
 
 # Download libufdt
