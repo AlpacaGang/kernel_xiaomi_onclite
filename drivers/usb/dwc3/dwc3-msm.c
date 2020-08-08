@@ -55,6 +55,13 @@
 #include "dbm.h"
 #include "debug.h"
 #include "xhci.h"
+#ifdef CONFIG_TUSB1064_XR_MISC
+#include "../../misc/tusb1064.h"
+#endif
+#ifdef CONFIG_VXR200_XR_MISC
+#include "../../misc/vxr7200.h"
+#endif
+
 
 #define SDP_CONNETION_CHECK_TIME 10000 /* in ms */
 
@@ -2957,9 +2964,17 @@ static void dwc3_resume_work(struct work_struct *w)
 				EXTCON_PROP_USB_TYPEC_POLARITY, &val);
 		if (ret)
 			mdwc->typec_orientation = ORIENTATION_NONE;
-		else
+		else {
 			mdwc->typec_orientation = val.intval ?
 					ORIENTATION_CC2 : ORIENTATION_CC1;
+#ifdef CONFIG_TUSB1064_XR_MISC
+			tusb1064_usb_event(val.intval ? true : false);
+#endif
+#ifdef CONFIG_VXR200_XR_MISC
+			vxr7200_usb_event(true);
+#endif
+
+		}
 
 		dbg_event(0xFF, "cc_state", mdwc->typec_orientation);
 
@@ -4191,9 +4206,6 @@ static void msm_dwc3_perf_vote_work(struct work_struct *w)
 	if (dwc->irq_cnt - last_irq_cnt >= PM_QOS_THRESHOLD)
 		in_perf_mode = true;
 
-	pr_debug("%s: in_perf_mode:%u, interrupts in last sample:%lu\n",
-		 __func__, in_perf_mode, (dwc->irq_cnt - last_irq_cnt));
-
 	last_irq_cnt = dwc->irq_cnt;
 	msm_dwc3_perf_vote_update(mdwc, in_perf_mode);
 	schedule_delayed_work(&mdwc->perf_vote_work,
@@ -4669,6 +4681,10 @@ static void dwc3_otg_sm_work(struct work_struct *w)
 		} else {
 			dwc3_msm_gadget_vbus_draw(mdwc, 0);
 			dev_dbg(mdwc->dev, "Cable disconnected\n");
+#ifdef CONFIG_VXR200_XR_MISC
+			vxr7200_usb_event(false);
+#endif
+
 		}
 		break;
 
