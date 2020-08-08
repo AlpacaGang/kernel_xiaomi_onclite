@@ -133,3 +133,4 @@ stock/
 stock_32/
 libufdt/
 out/
+build.log
