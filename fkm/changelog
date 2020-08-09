@@ -1,0 +1,24 @@
+- Based on pure 4.9 source
+- Used latest Xiaomi kernel changes
+- Upstream DTC
+- Included prima wlan driver
+- Do not compile Adreno 3xx / 4xx / 6xx drivers
+- Imported latest wireguard snapshot
+- Audio driver, with minimal Xiaomi changes
+- Silence sound driver log
+- Allow the Big Cluster to scale freely
+- Patch SafetyNet flags
+- Some optimizations
+- Enabled BPF JIT
+- Introduce SLMK
+- Remove GCC Invocations
+- Enable energy model
+- DSBoost driver
+- Fix blank screen while setting fingerprint
+- Add voltage control
+- Add cpumasks for big and LITTLE CPU clusters
+- Enable LTO
+- Add LLVM Polly optimizations
+- Remove avb flag
+- Fix Xiaomi Brightness issue
+- Set schedutil as default governor

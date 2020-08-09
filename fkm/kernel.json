@@ -1,0 +1,13 @@
+{
+  "kernel": {
+    "name": "AlpacaKernel",
+    "version": "r15",
+    "link": "https://github.com/AlpacaGang/kernel_xiaomi_onclite/releases/download/r15/AlpacaKernel-15-20200809-1845.zip",
+    "changelog_url": "https://raw.githubusercontent.com/AlpacaGang/kernel_xiaomi_onclite/ten/fkm/changelog",
+    "date": "2020-08-09",
+    "sha1": "4bb5fe2f84d83a4d3bb60bdf75ddbbbdb86a470e"
+  },
+  "support": {
+    "link": "https://t.me/joinchat/EYf_NhqjdRKQH_k_25ygdw"
+  }
+}
