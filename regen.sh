@@ -1,4 +1,4 @@
-CONFIG=onclite_defconfig
 export ARCH=arm64
-make O=out $CONFIG savedefconfig
-cp out/defconfig arch/arm64/configs/$CONFIG
+make onclite_defconfig
+cp .config arch/arm64/configs/onclite_defconfig
+git commit -am "defconfig: onclite: Regenerate" --signoff
