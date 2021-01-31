@@ -8,8 +8,8 @@ jobs:
           command: |
            git config --global user.name "RysepProject"
            git config --global user.email "RysepProjects@gmail.com"
-           git clone https://github.com/RysepProject/kernel_xiaomi_onclite -b JandaX JandaX
-           cd Xerl
+           git clone https://github.com/RysepProject/kernel_xiaomi_onclite -b RyzenX RyzenX
+           cd RyzenX
            chmod a+x gettools.sh
            ./gettools.sh
 workflows:
