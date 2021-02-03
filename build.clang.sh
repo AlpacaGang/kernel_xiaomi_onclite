@@ -54,6 +54,6 @@ echo -e "\n(i) Done moving modules"
 cd $ZIP_DIR
 cp $KERN_IMG zImage
 make normal &>/dev/null
-echo "Flashable zip generated under $ZIP_DIR."
+echo "Flashable zip generated under $ZIP_DIR." y
 cd ..
 # Build end
